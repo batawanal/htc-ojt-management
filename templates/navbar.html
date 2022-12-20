@@ -1,0 +1,123 @@
+{% load static %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="#">
+      <img
+        src="{% static 'image/logo.png' %}"
+        height="50  "
+        alt="MDB Logo"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">HOLY TRINITY COLLEGE OJT MANAGEMENT SYSTEM</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+    
+
+</div>
+
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+
+<!-- Navbar -->
+
+{% if request.user.is_student %}
+
+
+<div class="d-flex align-items-center">
+
+  
+
+  <a href="{% url 'logout' %}"><button type="button" class="btn btn-link px-3 me-2">
+    Logout
+  </button></a>
+</div>
+
+
+
+{% endif %}
+
+{% if request.user.is_dean %}
+
+
+<div class="d-flex align-items-center">
+  <a href="{% url 'home' %}"><button type="button" class="btn btn-link px-3 me-2">
+    Home
+  </button></a>
+ 
+  <div class="d-flex align-items-center">
+    <a href="{% url 'logout' %}"><button type="button" class="btn btn-link px-3 me-2">
+      Logout
+    </button></a>
+</div>
+<!-- <ul class="nav justify-content-end">
+
+    <li class="nav-item">
+      <a href="{% url 'home' %}"><button class="btn btn-outline-primary me-2" type="button">HOME</button></a>
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'logout' %}"><button class="btn btn-outline-primary me-2" type="button">LOGOUT</button></a>
+    </li>
+
+  </ul> -->
+
+{% endif %}
+
+{% if request.user.is_coordinator %}
+
+
+<div class="d-flex align-items-center">
+
+  <a href="{% url 'home' %}"><button type="button" class="btn btn-link px-3 me-2">
+    Home
+  </button></a>
+ 
+  <div class="d-flex align-items-center">
+    <a href="{% url 'logout' %}"><button type="button" class="btn btn-link px-3 me-2">
+      Logout
+    </button></a>
+</div>
+<!-- <ul class="nav justify-content-end">
+
+    <li class="nav-item">
+      <a href="{% url 'home' %}"><button class="btn btn-outline-primary me-2" type="button">HOME</button></a>
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'logout' %}"><button class="btn btn-outline-primary me-2" type="button">LOGOUT</button></a>
+    </li>
+
+  </ul> -->
+
+{% endif %}
+
+
+<!-- </nav> -->
+</nav>
