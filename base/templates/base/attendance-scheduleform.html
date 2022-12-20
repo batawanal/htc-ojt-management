@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+    <div class="container py-5 h-100">
+        <p>FORMAT EXAMPLE YEAR-MONTH-DAY(2022-01-01)</p>
+        {{form|crispy}}
+    <br>
+    <input type="submit" class="btn btn-primary" value="Submit" />
+    </div>
+    </form> 
+
+{% endblock content %}
+
